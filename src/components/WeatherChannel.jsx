@@ -31,12 +31,68 @@ const mockConditionData = [{
  ];
  
 export default class WeatherChannel extends Component{
+    constructor(props) {
+        super(props);
+        this.state = {
+            tempSwitch: 'C',
+            temp:mockConditionData[1].temp.C+' C',   
+            mockForecastData:mockForecastData                    
+        }
+    }
+
+    swapCF = ()=>{
+        if(this.state.tempSwitch==='C') {
+            this.setState({tempSwitch: 'F'});
+        } else {
+            this.setState({tempSwitch: 'C'});
+        }
+    }
+
+    handleTempState=()=>{
+        //use 
+        if (this.state.tempSwitch==='C'){
+            this.setState({temp:mockConditionData[1].temp.F + ' F'})
+            console.log(this.state.temp)
+        }
+        else{
+            this.setState(
+                {temp:mockConditionData[1].temp.C + ' C'}
+            )
+        }       
+    }
+
+    forecastSwap=()=>{
+        console.log('ffswap')
+        if (this.state.tempSwitch==='C'){
+            this.setState(mockForecastData.map((element)=>{
+                    return {
+                        weekday:element.weekday,
+                        time: element.time,
+                        high: element.high.F + ' f',
+                        low: element.low.F + ' f'
+                    }
+                }))
+        }
+        if (this.state.tempSwitch==='F'){
+            this.setState(mockForecastData.map((element)=>{
+                    return {
+                        weekday:element.weekday,
+                        time: element.time,
+                        high: element.high.C + ' C',
+                        low: element.low.C + ' C'
+                    }
+                }))
+        }
+    }
+
+   
     render(){
         return(
             <main>
-                <Toolbar />
-                <CityCondition />
-                <Forecast />
+                <Toolbar tempSwitch={this.state.tempSwitch} swapCF={this.swapCF} handleTempState={this.handleTempState}
+                forecastSwap={this.forecastSwap}/>
+                <CityCondition tempSwitch={this.state.tempSwitch} temp={this.state.temp}/>
+                <Forecast tempSwitch={this.state.tempSwitch} mockForecastData={this.state.mockForecastData}/>
             </main>
         );
     }
