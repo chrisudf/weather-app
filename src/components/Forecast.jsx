@@ -5,12 +5,10 @@ import '../styles/main.css';
 class Forecast extends React.Component{
     constructor(props){
         super(props)
-        // var a 
         this.state={
             mockData: this.props.mockForecastData
         }
     }
-    // a = this.props.tempSwitch
     switch5=(e)=>{
         this.setState(()=>{
             return {mockData: this.props.mockForecastData.slice(0,5)}
@@ -58,7 +56,7 @@ class Forecast extends React.Component{
                         {
                             this.state.mockData.map((element)=>{
                             {/* mockForecastData.map((element)=>{ */}
-                                return <div className="weather-forecast__high">{element.high.C} {this.props.tempSwitch}</div> 
+                                return <div className="weather-forecast__high">{element.high[this.props.tempSwitch]} {this.props.tempSwitch}</div> 
                             })
                         }
                     </div>
@@ -66,7 +64,7 @@ class Forecast extends React.Component{
                         {
                             this.state.mockData.map((element)=>{
                             {/* mockForecastData.map((element)=>{ */}
-                                return <div className="weather-forecast__low">{element.low.C} {this.props.tempSwitch}</div> 
+                                return <div className="weather-forecast__low">{element.low[this.props.tempSwitch]} {this.props.tempSwitch}</div> 
                             })
                         }
                     </div>

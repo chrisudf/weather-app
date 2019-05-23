@@ -10,28 +10,7 @@ import {mockConditionData} from "../components/WeatherChannel";
 class CityCondition extends React.Component{
     constructor(props){
         super(props)
-        // this.state={temp:mockConditionData[1].temp.C+' C'}
-        // var temp
-        // // console.log(mockConditionData[1].temp.F + 'F')
-        // if (this.props.tempSwitch==='F'){
-        //     temp=mockConditionData[1].temp.F + 'F'
-        //     // console.log(temp)
-        // } 
-        // else{
-        //     temp=mockConditionData[1].temp.C + 'C'
-        // } 
-        // // console.log(temp)
     }
-    // handleTempState=()=>{
-    //     //use 
-    //     if (this.props.tempSwitch==='F'){
-    //         this.setState({temp:mockConditionData[1].temp.F + ' F'})
-    //         console.log(this.state.temp)
-    //     }
-    //     this.setState(
-    //         {temp:mockConditionData[1].temp.C + ' C'}
-    //     )
-    // }
     render(){
         return(
              <section class="weather-condition">

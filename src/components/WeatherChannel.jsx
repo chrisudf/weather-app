@@ -60,32 +60,42 @@ export default class WeatherChannel extends Component{
             )
         }       
     }
-
-    forecastSwap=()=>{
-        console.log('ffswap')
-        if (this.state.tempSwitch==='C'){
-            this.setState(mockForecastData.map((element)=>{
-                    return {
-                        weekday:element.weekday,
-                        time: element.time,
-                        high: element.high.F + ' f',
-                        low: element.low.F + ' f'
-                    }
-                }))
-        }
-        if (this.state.tempSwitch==='F'){
-            this.setState(mockForecastData.map((element)=>{
-                    return {
-                        weekday:element.weekday,
-                        time: element.time,
-                        high: element.high.C + ' C',
-                        low: element.low.C + ' C'
-                    }
-                }))
-        }
-    }
-
    
+
+    // forecastSwap=()=>{
+    //     console.log('ffswap')
+    //     // if (this.state.tempSwitch==='C'){
+    //     //     this.setState(mockForecastData.map((element)=>{
+    //     //             return {
+    //     //                 weekday:element.weekday,
+    //     //                 time: element.time,
+    //     //                 high: element.high.F + ' f',
+    //     //                 low: element.low.F + ' f'
+    //     //             }
+    //     //         }))
+    //     // }
+    //     if (this.state.tempSwitch==='C'){
+    //         mockForecastData.map((element)=>{
+    //             this.setState({
+    //                 weekday:element.weekday,
+    //                 time: element.time,
+    //                 high: element.high.F + ' F',
+    //                 low: element.low.F + ' F'}
+    //                 )
+    //             })
+    //     }
+    //     if (this.state.tempSwitch==='F'){
+    //         return mockForecastData.map((element)=>{
+    //             return this.setState({
+    //                 weekday:element.weekday,
+    //                 time: element.time,
+    //                 high: element.high.C + ' C',
+    //                 low: element.low.C + ' C'}
+    //                 )
+    //             })
+    //     }
+    // }
+  
     render(){
         return(
             <main>
@@ -99,4 +109,4 @@ export default class WeatherChannel extends Component{
 }
 
 export {mockConditionData};
-export {mockForecastData};
+// export {mockForecastData};

@@ -24,7 +24,7 @@ class Toolbar extends React.Component{
     handleOnclick=()=>{
         this.props.swapCF()
         this.props.handleTempState()
-        this.props.forecastSwap()
+        // this.props.forecastSwap()
         console.log('ok')
     }
     render(){
