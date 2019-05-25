@@ -6,13 +6,8 @@ import '../styles/main.css';
 const Header = (props) => {
     return (
         <header>
-            <div className="header__logo">
-                <img src={logo} alt="Logo" />
-                <div className="header__title">
-                    <p>Weather Channel</p>
-                </div> 
-            </div>  
-            
+            <img className="header__logo" src = {logo} alt = "logo"   />
+            <h1 className="header__title">Weather Channel</h1>
         </header>      
     );
 }

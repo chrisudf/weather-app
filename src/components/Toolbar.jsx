@@ -29,16 +29,8 @@ class Toolbar extends React.Component{
     }
     render(){
         return( <nav>
-            <div className="search-input">
-                <input type="text"/>
-            </div>
-            <div className="search-btn">
-                <button>enter</button>
-            </div>
-            <div className="temp-switch">
-                {/* <button onClick= {this.handleOnclick}>{this.state.temp}</button>              */}
-                <button onClick= {this.handleOnclick}>{this.props.tempSwitch}</button>             
-            </div>
+            <form className="search-input" action=""></form>
+            <button className="temp-switch" onClick= {this.handleOnclick}>{this.props.tempSwitch}</button>
         </nav>)
     }
 }
